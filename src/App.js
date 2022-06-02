@@ -4,9 +4,6 @@ import Nav from "./components/Nav";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
-import { ParallaxProvider } from "react-scroll-parallax";
-import Img1 from "./img/portfolio-pic.JPG";
-import Img2 from "./img/hero-image2.jpeg";
 import projectone from "./img/project-one.png";
 import runbuddy from "./img/run-buddy-image.png";
 import projecttwo from "./img/project2.jpeg";
@@ -50,7 +47,15 @@ function App() {
         contactSelected={contactSelected}
         setContactSelected={setContactSelected}
       />
-  )
+      <Header />
+      <PBanner title="About" />
+      <About />
+      <PBanner title="Projects" />
+      <Projects projects={projects} />
+      <PBanner title="Contact Me" />
+      <Footer />
+      <PBanner title="Thank You" />
+    );
 }
 
 export default App;
