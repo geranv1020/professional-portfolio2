@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
+import { ParallaxProvider } from "react-scroll-parallax";
 import projectone from "./img/project-one.png";
 import runbuddy from "./img/run-buddy-image.png";
 import projecttwo from "./img/project2.jpeg";
@@ -41,6 +42,7 @@ function App() {
   ]);
 
   return (
+    <ParallaxProvider>
       <Nav
         setCurrentCategory={setCurrentCategory}
         currentCategory={currentCategory}
@@ -48,14 +50,15 @@ function App() {
         setContactSelected={setContactSelected}
       />
       <Header />
-      <PBanner title="About" />
+      <PBanner photo={Img1} title="About" />
       <About />
-      <PBanner title="Projects" />
+      <PBanner photo={Img2} title="Projects" />
       <Projects projects={projects} />
-      <PBanner title="Contact Me" />
+      <PBanner photo={Img3} title="Contact" />
       <Footer />
-      <PBanner title="Thank You" />
-    );
+      <PBanner photo={Img4} title="Thank You" />
+    </ParallaxProvider>
+  );
 }
 
 export default App;
